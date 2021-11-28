@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hey</title>
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+        <style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#2b1055, #7597de) ;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.active
+{
+    background: #fff;
+    color: #2b1055;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522,transparent);
+    z-index: 1000;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon{
+    mix-blend-mode: screen;
+}
+
+section img#mountains_front{
+    z-index: 10;
+
+}
+
+#text{
+    position: absolute;
+    /* right: -350px; */
+    color:#fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+    /* transform: translateY(100px); */
+
+}
+
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+}
+
+.sec{
+    position: relative;
+    padding: 100px;
+    background:#1c0522 ;
+}
+
+.sec h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sec p{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+        </style>
+    </head>
+    <body>
+        {% load static %}
+        <header>
+            <a href="#" class="logo">Namaste</a>
+            <ul>
+                <li><a href="#" class="active">Home</a> </li>
+                <li><a href="/contact/">Contacts</a> </li>
+                <li><a href="/about/">About</a> </li>
+                <li><a href="/blog/">News</a> </li>
+            </ul>
+        </header>
+        <section>
+            <img src='{% static "home/stars.png" %}' id="stars">
+            <img src='{% static "home/moon.png" %}' id="moon">
+            <img src='{% static "home/mountains_behind.png" %}' id="mountains_behind">
+            <h2 id="text">Aayush</h2>
+            <a href="#sec" id="btn">Explore</a>
+            <img src='{% static "home/mountains_front.png" %}' id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Kei Kura Garau Na</h2>
+            <p>
+                This is Aayush Dhakal, a student/developer/beatboxer and a good cook. I just realized my high school computer teachers were dumb and I am pretty sure that they didn't even know how to install IDE in a machine and what is virtual environment. 🌿 <br><br>
+                I am a Self-taught developer and I always love to learn something new. In my view people should start to grab knowledge from every sectors, faculty and opportunity. It would be so great to hear that there is skillfull people in every sector even in garbage collection. Most of the youths and teenagers of Nepal always listen to garbage breakup songs and they do nothing except saying and acting like "I am in depression". F* those things, do work and keep working and working.<br><br>
+                I am currenty working on web-development using django, I'm exploring all these Css, JavaScript and this is my very first website. There could be some bugs but you know who cares? So, now I wanna learn some cyber-security suffs. Thus, thank you for visiting this site, Stay safe and Code. Peace ✌
+            </p>
+        </div>
+        <script>
+            let stars = document.getElementById('stars') 
+            let moon = document.getElementById('moon') 
+            let mountains_behind = document.getElementById('mountains_behind') 
+            let text = document.getElementById('text')
+            let btn = document.getElementById('btn') 
+            let mountains_front = document.getElementById('mountais_front')
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.top = value* 0.25 + 'px';
+                moon.style.top = value* 1.05 + 'px';
+                mountains_behind.style.top = value* 0.5 + 'px';
+                mountains_front.style.top = value* 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop= value * 1.5 + 'px';
+                header.style.top = value* 0.5 + 'px';
+            })
+
+        </script>
+    </body>
+
+</html>

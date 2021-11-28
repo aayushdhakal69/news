@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        p {
+            line-height: 1.7;
+            color: black;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: .4px;
+            font-weight: 600;
+        }
+
+        .wrapper-normal,
+        .wrapper-large {
+            height: 100%;
+            width: 96%;
+            margin: 0 auto;
+        }
+
+        ul {
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+
+        .footer-main {
+            border-top: 1px solid #000000;
+            padding: 40px 0;
+            margin: 40px 0 0;
+            font-size: .8rem;
+            color: rgb(0, 0, 0);
+            font-weight: 300;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-main:before {
+            display: block;
+            content: " ";
+            width: 7px;
+            height: 7px;
+            border: #ededed 1px solid;
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            margin-left: -5px;
+            background: rgb(226, 223, 223);
+            box-shadow: #fff 0 0 0 5px;
+            border-radius: 3px;
+        }
+
+        /* hr.solid {
+    border-top: 4px solid #bbb;
+    } */
+    </style>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Home-about</title>
+</head>
+
+<body style="scroll-behavior: smooth; background-color:#ddd;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="font-weight: 450; background-color: rgb(209, 209, 209); ">
+        <div class="container-fluid">
+            <!-- photo halna parxa ya left side ma -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="#">
+            <img src='{% static "home/samir.jpg" %}' width="30" height="30" alt="">
+        </a> -->
+            <!-- " | "  -->
+            <!-- <h4 style="color: cornsilk;"> | </h4> -->
+
+            <!-- <div class="d-flex align-items-center">
+            <span class="ml-2 text fa-medium mx-3" style="color:hotpink;">Follow</span>
+            <a href="www.google.com">Google</a>
+        </div> -->
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="text-decoration-color: black;">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tech News</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+<!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> -->
+
+<div class="container" style="margin-top: 3rem; margin-bottom: 1rem;">
+    <img src='{% static "home/ad.jpg" %}' height="300" width="225" class="rounded mx-auto d-block"
+        style="border-radius: 100%; opacity: 1; ">
+</div>
+
+<div class="container" style="size: 10rem;">
+    <p style="text-align: center;">
+        Hellow and Namaste, this is Aayush Dhakal.
+        AKA Computer Ko Kira,<br> I like to do programming
+        and all technical stuff, and I just realized
+        my computer<br> teacher is dumb. He dont even know
+        how to install IDE. I also like to do beatbox and<br>
+        the sound I like is liproll bass because you know
+        you can't roll like that and I follow<br> whole hiphop
+        elements like: MC-ing, beatbox, Dj-ing, etc.
+        I love to do programming and<br> explore new things
+        and this is the first website that I made.
+        I also have some knowledge<br> in cyber-security field
+        but you know, I am still noob AF.
+    </p>
+    <hr class="solid" style="margin-bottom: 5rem;">
+    <hr class="solid">
+    <h3 style="margin-left: 0px; margin-top:3rem ;"> Skills </h3>
+    <div class="container">
+        <ul style="margin-left: 0px;" class="skill-list">
+            <li style="opacity: 0.8;"> HTML-CSS </li>
+            <li style="opacity: 0.8;"> Python, C, CPP </li>
+            <li style="opacity: 0.8;"> Phishing </li>
+            <li style="opacity: 0.8;"> Css Frameworks (Bootstrap, Bulma) </li>
+            <li style="opacity: 0.8;"> Git </li>
+            <li style="opacity: 0.8;"> Flutter </li>
+            <li style="opacity: 0.8;"> Mobile app development </li>
+            <li style="opacity: 0.8;"> Photoshop and Pagemaker </li>
+            <li style="opacity: 0.8;"> Tally </li>
+        </ul>
+    </div>
+
+    <!-- <hr class="solid" > -->
+    <footer class="footer-main">
+        Aayush Dhakal © 2021
+        <p style="opacity: 0.6;">Have a beautiful day mate!</p>
+    </footer>
+
+</div>
+
+</head>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
