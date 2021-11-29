@@ -8,6 +8,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
 
+        @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
         * {
             margin: 0;
             padding: 0;
@@ -200,15 +202,15 @@
 
         <form method="post" action="/contact/">
             {% csrf_token %}
-            <div class="form-group col-xs-4">
-                <input type="text" class="form-control input-lg" id="name" name="name" aria-describedby="name" cols="30" rows="5"
-                placeholder="Name*" style="height: 4vh; font-size: 2em;" >
+            <div class="form-control form-control-lg">
+                <label for="exampleInputName1" style="font-size: 1.4em;">Name*</label>
+                <input type="text" class="form-control input-lg" id="name" name="name" aria-describedby="name" cols="30" rows="5" >
             </div>
 
-            <div class="form-group small" style="margin-top: 3rem;">
-                <input type="email" style="height: 4vh; font-size: 2.3em;" class="form-control my-1" id="email" name="email" aria-describedby="emailHelp"
-                    placeholder="Email Address*">
-                <small style="color: #fff; font-size: x-large;" id="emailHelp" class="form-text ">We'll never share your email with anyone
+            <div class="form-control form-control-lg" style="margin-top: 3rem;">
+                <label for="exampleInputName1" style="font-size: 1.4em;">Email*</label>
+                <input type="email" class="form-control my-1" id="email" name="email" aria-describedby="emailHelp">
+                <small style="color: rgba(25, 195, 10, 0.918); font-size: x-large;" id="emailHelp" class="form-text ">We'll never share your email with anyone
                     else.</small>
             </div>
 
@@ -238,7 +240,7 @@
 
 
 
-
+    <!-- col-xs-4 -->
 
 
 
