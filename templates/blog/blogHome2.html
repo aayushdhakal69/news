@@ -1,3 +1,4 @@
+<!-- hey this is template blog HOME -->
 <!DOCTYPE html>
 <html>
 
@@ -64,14 +65,14 @@
 
         header ul li a:hover,
         header ul li a.active {
-            background: #fff;
-            color: #2b1055;
+            background: rgb(255, 86, 86);
+            color: #fdfdfd;
         }
 
         /* section{
     position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 40%;
+    height: 2vh;
     padding: 100px;
     display: flex;
     justify-content: center;
@@ -135,11 +136,14 @@
 
         .sec {
             position: relative;
-            padding: 100px;
+            padding-top: 50px;
+            padding-left: 100px;
+            padding-right: 100px;
+            padding-bottom: 100px;
         }
 
         .sec h2 {
-            font-size: 2.5em;
+            font-size: 4em;
             margin-bottom: 10px;
             color: #fff;
         }
@@ -149,90 +153,99 @@
             color: #fff;
         }
 
-        .footer-main {
-            border-top: 1px solid #f7f4f4;
-            /* padding: 40px 0; */
-            margin-top: 18rem;
-            margin: 40px 0 0;
-            font-size: .8rem;
-            color: rgb(251, 246, 246);
-            font-weight: 300;
-            text-align: center;
-            position: relative;
-            margin-bottom: 1rem;
+        .sec hr {
+            color: #fff;
         }
 
-        /* .footer-main:before {
-    display: block;
-    content: " ";
-    width: 7px;
-    height: 7px;
-    border: #ededed 1px solid;
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: rgb(226, 223, 223);
-    box-shadow: #fff 0 0 0 5px;
-    border-radius: 3px;
-} */
+        .active-pink-4 input[type=text]:focus:not([readonly]) {
+            border: 1px solid #f48fb1;
+            box-shadow: 0 0 0 1px #f48fb1;
+        }
     </style>
 </head>
 
 <body>
     {% load static %}
-
-
     <header>
-        <a href="#" class="logo">Full News</a>
+        <a href="#" class="logo">Tech-News</a>
         <ul>
             <li><a href="/">Home</a> </li>
-            <!-- <li><a href="/contact/" class="active">Contacts</a> </li>
-            <li><a href="/about/">About</a> </li> -->
-            <li><a href='javascript:history.back()'> Back</a> </li>
+            <!-- <li><a href="home/contact/" >Contacts</a> </li> -->
+            <!-- <li><a class="active" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Subscribe</a> -->
+            <!-- </li> -->
+            <li><a href="/blog/modalt/">Subscribe</a> </li>
         </ul>
     </header>
     <section>
         <img src='{% static "home/stars.png" %}' id="stars">
     </section>
 
-    <div class="container" style="color: #fff; margin-top: 10rem;">
-        <div class="blog-post">
-            <h2 class="blog-post-title" style="font-size: 3.2em;">{{post.title}}</h2>
-            <p class="blog-post-meta" style="font-size: 1.6em;">{{post.timeStamp}} by <a href="#" style="text-decoration: none; color: hotpink;"> {{post.author}}</a></p>
 
-            <p style="font-size: 1.9em;">{{post.content}}</p>
-            <hr>
-        </div>
+
+
+
+    <div class="container">
+        <form method="get" action="/blog/search/" class="d-flex" style="margin-top: 6rem;">
+            <input class="form-control me-2" type="search" placeholder="Search News" aria-label="Search" name="query"
+                id="query">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
     </div>
 
-    
 
 
-    <!-- <footer class="footer-main">
-        Aayush Dhakal © 2021
-        <p style="opacity: 0.6;">Have a beautiful day mate!</p>
-    </footer> -->
+    <div class="sec" id="sec">
+        <!-- Button trigger modal -->
+        <div class="container">
+            <button style="margin-top: 5rem;" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+        </div>
 
-
-
-
-
-
-
-
-
-
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for post in allPosts %}
+        <div class="conatiner" style="margin-top: 1rem;">
+            <h3 style="color: #fff;">{{post.title}}</h3>
+            <p style="font-size: 1.2em;">{{post.content | truncatechars:250}}</p>
+            <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary"> Full News </a>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
     <script>
         let stars = document.getElementById('stars')
 
         window.addEventListener('scroll', function () {
             let value = window.scrollY;
-            stars.style.top = value * 0.25 + 'px';
+            stars.style.top = value * 1 + 'px';
         })
     </script>
 </body>
 
 </html>
-<!-- background: #fff;
-color: #2b1055; -->
+<!-- 0.25 -->
+
+<!-- <div class="active-pink-3 active-pink-4 mb-4  " style="margin-top: 6rem;">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  </div> -->

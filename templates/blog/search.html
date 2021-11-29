@@ -193,9 +193,9 @@
         {% endif %}
         {% for post in allPosts %}
         <div class="conatiner">
-            <h3 style="color: #fff;">{{post.title}}</h3>
-            <p style="font-size: 1.2em;">{{post.content | truncatechars:250}}</p>
-            <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary"> Full News </a>
+            <h2 style="color: #fff;">{{post.title}}</h2>
+            <p style="font-size: 2em;">{{post.content | truncatechars:250}}</p>
+            <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style="height: 4rem; width: 10rem; font-size: 1.8em;"> Full News </a>
         </div>
         <hr>
         {% endfor %}

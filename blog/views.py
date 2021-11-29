@@ -31,3 +31,9 @@ def search(request):
         params= {'allPosts': allPosts,'query': query}
         return render(request,'blog/search.html',params)
         # return HttpResponse('K xa sathi')
+
+def modalt(request):
+    allPosts= Post.objects.all()
+    # print(allPosts)
+    context={'allPosts': allPosts}
+    return render(request,'blog/modalt.html', context)

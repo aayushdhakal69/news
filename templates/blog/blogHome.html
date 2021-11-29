@@ -65,8 +65,8 @@
 
         header ul li a:hover,
         header ul li a.active {
-            background: #fff;
-            color: #2b1055;
+            background: rgb(255, 86, 86);
+            color: #fdfdfd;
         }
 
         /* section{
@@ -171,9 +171,9 @@
         <a href="#" class="logo">Tech-News</a>
         <ul>
             <li><a href="/">Home</a> </li>
-            <!-- <li><a href="home/contact/" >Contacts</a> </li>
-            <li><a href="home/about/">About</a> </li> -->
-            <li><a href="#" class="active">News</a> </li>
+            <!-- <li><a href="home/contact/" >Contacts</a> </li> -->
+            <li><a href="javascript:history.back()" >Back</a> </li>
+            <!-- <li><a href="#">News</a> </li> -->
         </ul>
     </header>
     <section>
@@ -182,7 +182,7 @@
 
     <div class="container">
         <form method="get" action="/blog/search/" class="d-flex" style="margin-top: 6rem;">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query">
+            <input class="form-control me-2" type="search" placeholder="Search News" style="height: 4vh; font-size: 1.9em;" aria-label="Search" name="query" id="query">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
     </div>
@@ -193,9 +193,9 @@
         {% for post in allPosts %}
 
         <div class="conatiner" style="margin-top: 1rem;">
-            <h3 style="color: #fff;">{{post.title}}</h3>
-            <p style="font-size: 1.2em;">{{post.content | truncatechars:250}}</p>
-            <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary"> Full News </a>
+            <h2 style="color: #fff;">{{post.title}}</h2>
+            <p style="font-size: 2em;">{{post.content | truncatechars:250}}</p>
+            <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style="height: 4rem; width: 10rem; font-size: 1.8em;  "> Full News </a>
         </div>
         <hr>
         {% endfor %}
