@@ -193,6 +193,7 @@
         {% endif %}
         {% for post in allPosts %}
         <div class="conatiner">
+            <img src='/media/{{post.image}}' style="height: 250px; width: 210px; align-items: center;">
             <h2 style="color: #fff;">{{post.title}}</h2>
             <p style="font-size: 2em;">{{post.content | truncatechars:250}}</p>
             <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style="height: 4rem; width: 10rem; font-size: 1.8em;"> Full News </a>

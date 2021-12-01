@@ -7,7 +7,6 @@ from django.contrib import messages
 # Create your views here.
 def blogHome(request):
     allPosts= Post.objects.all()
-    # print(allPosts)
     context={'allPosts': allPosts}
     return render(request,'blog/blogHome.html',context)
 

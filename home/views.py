@@ -27,7 +27,7 @@ def contact(request):
     return render(request, 'home/contact2.html/')
 
 def about(request):
-    return render(request, 'home/about2.html')
+    return render(request, 'home/about3.html')
  
 # def news(request):
 #     return render(request,'home/news.html')
